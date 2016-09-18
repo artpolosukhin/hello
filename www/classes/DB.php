@@ -15,7 +15,7 @@ class db
         #   mysqli_set_charset($dbc, 'utf-8');
         #   return $dbc;
     }
-    public function query($sql, $class='stdClass')
+    public function queryAll($sql, $class='stdClass')
     {
 
         #   $res = mysqli_query($sql);
@@ -24,5 +24,9 @@ class db
         #   while ($row = mysqli_fetch_object($res , $class)) {$ret[] = $row;}
         #   return $ret;
         return $sql;
+    }
+    public function queryOne($sql, $class='stdClass'){
+        #   return $this->queryAll($sql, $class)[0];
+            return "One query";
     }
 }

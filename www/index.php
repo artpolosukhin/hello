@@ -6,10 +6,18 @@
  * Time: 10:33
  */
 
-require __DIR__ .'/news/News.php';
+require_once __DIR__ . '/autoload.php';
 
-$items = News::getAll();
+$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$act = isset($_GET['act']) ? $_GET['act'] : 'All    ';
+require_once __DIR__.'/controllers/NewsController.php';
+$controllerClassName = $ctrl . 'Controller';
+$controller = new $controllerClassName;
+$method = 'action' . $act;
+$controller->$method();
 
-require __DIR__.'/views/index.php';
+
+
+
 
 
