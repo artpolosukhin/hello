@@ -2,7 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Art
- * Date: 15.09.2016
- * Time: 16:36
+ * Date: 18.09.2016
+ * Time: 10:33
  */
-phpinfo();
+
+require __DIR__ .'/news/News.php';
+
+$items = News::getAll();
+
+require __DIR__.'/views/index.php';
+
+
